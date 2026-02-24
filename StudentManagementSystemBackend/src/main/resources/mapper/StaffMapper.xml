@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="uk.ac.ucl.comp0010.mapper.StaffMapper">
+  <select id="listStaffs" resultType="uk.ac.ucl.comp0010.vo.StaffListVo">
+    SELECT id,
+           first_name,
+           last_name,
+           email,
+           title,
+           department
+    FROM staff ${ew.customSqlSegment}
+  </select>
+  <select id="listDepartments" resultType="java.lang.String">
+    SELECT department
+    FROM staff
+  </select>
+  <select id="listTitles" resultType="java.lang.String">
+    SELECT title
+    FROM staff
+  </select>
+</mapper>

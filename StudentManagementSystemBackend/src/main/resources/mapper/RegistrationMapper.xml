@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="uk.ac.ucl.comp0010.mapper.RegistrationMapper">
+  <select id="list" resultType="uk.ac.ucl.comp0010.vo.RegistrationListVo">
+    SELECT registration.id,
+           module.code        AS moduleCode,
+           module.name        AS moduleName,
+           record.date        AS examDate,
+           registration.score,
+    registration.student_id AS studentId,
+           student.first_name AS studentFirstName,
+           student.last_name  AS studentLastName,
+           registration.registration_time
+    FROM registration
+           LEFT JOIN record ON registration.record_id = record.id
+           LEFT JOIN module ON module.code = record.module_code
+           LEFT JOIN student ON registration.student_id = student.id
+    <if test="ew != null and ew.customSqlSegment != null">
+      ${ew.customSqlSegment}
+    </if>
+  </select>
+
+  <select id="listStudentRegistrations"
+    resultType="uk.ac.ucl.comp0010.vo.StudentRegistrationListVo">
+    SELECT registration.id,
+           module.code    AS moduleCode,
+           module.name    AS moduleName,
+           module.credits AS credits,
+           record.date    AS examDate,
+           registration.score,
+           registration.registration_time
+    FROM registration
+           LEFT JOIN record ON registration.record_id = record.id
+           LEFT JOIN module ON module.code = record.module_code
+    WHERE registration.student_id = #{studentId}
+  </select>
+</mapper>

@@ -1,0 +1,34 @@
+/* App.css */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #001529; /* Dark blue background to match Ant Design default header color */
+  }
+  
+  .header-title {
+    color: #151515; 
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .sider {
+    background-color: #ffffff;
+  }
+  
+  .content-layout {
+    padding: 0 24px 24px;
+    overflow: hidden;
+  }
+  
+  
+  .content {
+    padding: 24px;
+    margin: 0;
+    min-height: 280px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
+  

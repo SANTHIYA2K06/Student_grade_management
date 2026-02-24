@@ -1,0 +1,58 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class admin {
+   username: varchar(256)
+   password: varchar(256)
+   id: int
+}
+class module {
+   name: varchar(100)
+   mnc: tinyint(1)
+   credits: int
+   staff_id: int
+   code: varchar(20)
+}
+class record {
+   module_code: varchar(20)
+   date: date
+   id: bigint
+}
+class registration {
+   student_id: int
+   record_id: bigint
+   score: int
+   registration_time: datetime
+   id: bigint
+}
+class staff {
+   first_name: varchar(30)
+   last_name: varchar(30)
+   username: varchar(30)
+   password: varchar(256)
+   email: varchar(50)
+   title: varchar(30)
+   department: varchar(256)
+   id: int
+}
+class student {
+   first_name: varchar(30)
+   last_name: varchar(30)
+   username: varchar(30)
+   password: varchar(256)
+   email: varchar(50)
+   birth_date: date
+   program_of_study: varchar(30)
+   graduation_year: int
+   department: varchar(256)
+   id: int
+}
+
+module        -[#595959,plain]-^  staff        : "staff_id:id"
+record        -[#595959,plain]-^  module       : "module_code:code"
+registration  -[#595959,plain]-^  record       : "record_id:id"
+registration  -[#595959,plain]-^  student      : "student_id:id"
+@enduml

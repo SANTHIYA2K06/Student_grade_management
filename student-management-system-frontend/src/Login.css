@@ -1,0 +1,76 @@
+
+/* Login.css */
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #e5eaff 0%, #e4efe9 100%);
+  background-size: 300% 300%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+.login-card {
+  padding: 3vh;
+  padding-bottom: 0;
+  width: 45vh;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.login-title {
+  padding-bottom: 3vh;
+}
+
+.login-input {
+  padding: 10px;
+}
+
+.login-options-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.login-checkbox {
+  margin-left: 8px;
+}
+
+.forgot-password-button {
+  background: none;
+  border: none;
+  color: #1890ff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.forgot-password-button:hover {
+  color: #40a9ff;
+}
+
+.login-button {
+  height: 40px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 1vh;
+}
+
+.tabs-container {
+  margin-bottom: 16px;
+}
+
+

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: CW2
+  datasource:
+    url: jdbc:h2:mem:test;MODE=PostgreSQL;
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none  # We will rely on schema.sql
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 2800
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true

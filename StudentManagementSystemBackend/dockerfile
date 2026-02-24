@@ -1,0 +1,17 @@
+# Docker image for springboot file run
+# VERSION 0.0.2
+# Author: Jack Pan
+# Base Mirror java
+FROM openjdk:17-jdk-buster
+# Author
+MAINTAINER Jack Pan
+# VOLUME Specify Temp File Lib /tmp。
+# Create a temporary file at the host machine lib /var/lib/docker and link to /tmp
+VOLUME /tmp
+# add jar file
+ADD /target/student-management-system-0.0.1-SNAPSHOT.jar student-management-system.jar
+
+# expose port
+EXPOSE 2800
+# run jar file
+ENTRYPOINT ["java","-jar","/student-management-system.jar"]

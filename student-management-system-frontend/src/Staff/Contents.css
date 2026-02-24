@@ -1,0 +1,82 @@
+
+.clickable-row {
+    cursor: pointer;
+  }
+
+
+  .no-student-record {
+    margin: 24px 16px 0;
+    padding: 24px;
+    background: #fff;
+  }
+  
+  .student-record {
+    margin: 24px 16px 0;
+    padding: 24px;
+    background: #fff;
+  }
+  
+  .personal-info {
+    margin-bottom: 24px;
+  }
+  
+  .exam-record-controls {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .exam-record-table {
+    margin-bottom: 16px;
+  }
+  
+  .average-score {
+    margin-top: 16px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #001529; /* Dark blue background to match Ant Design default header color */
+  }
+  
+  .header-title {
+    color: #151515;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .header-dropdown {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    margin: 20px;
+  }
+  
+  .header-username {
+    margin-left: 8px;
+  }
+  
+  .sider {
+    background-color: #ffffff;
+  }
+  
+  .content-layout {
+    padding: 0 24px 24px;
+    overflow: hidden;
+  }
+  
+  .content {
+    padding: 24px;
+    margin: 0;
+    min-height: 280px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
+  .breadcrumb {
+    margin: 16px 0;
+  }
+  

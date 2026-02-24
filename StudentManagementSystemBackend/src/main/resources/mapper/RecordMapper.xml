@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="uk.ac.ucl.comp0010.mapper.RecordMapper">
+  <select id="list" resultType="uk.ac.ucl.comp0010.vo.RecordListVo">
+    SELECT record.id,
+           module.code              AS moduleCode,
+           module.name              AS moduleName,
+           record.date,
+           AVG(registration.score)  AS average_score,
+           COUNT(registration.id)   AS numberOfCandidates,
+           CASE
+             WHEN COUNT(registration.id) = 0 THEN NULL
+             ELSE (SUM(CASE WHEN registration.score > 40 THEN 1 ELSE 0 END) * 1.0 /
+                   COUNT(registration.id))
+             END AS pass_rate
+    FROM record
+           LEFT JOIN module ON module.code = record.module_code
+           LEFT JOIN registration ON registration.record_id = record.id
+    <if test="ew != null and ew.customSqlSegment != null">
+      ${ew.customSqlSegment}
+    </if>
+    GROUP BY record.id
+  </select>
+  <select id="get" resultType="uk.ac.ucl.comp0010.vo.RecordDetailVo">
+    SELECT record.id,
+           module.code             AS moduleCode,
+           module.name             AS moduleName,
+           record.date,
+           AVG(registration.score) AS average_score,
+           COUNT(registration.id)  AS numberOfCandidates,
+           CASE
+             WHEN COUNT(registration.id) = 0 THEN NULL
+             ELSE (SUM(CASE WHEN registration.score > 40 THEN 1 ELSE 0 END) * 1.0 /
+                   COUNT(registration.id))
+             END                   AS pass_rate
+    FROM record
+           LEFT JOIN module ON module.code = record.module_code
+           LEFT JOIN registration ON registration.record_id = record.id
+    WHERE record.id = #{id}
+    GROUP BY record.id;
+  </select>
+</mapper>

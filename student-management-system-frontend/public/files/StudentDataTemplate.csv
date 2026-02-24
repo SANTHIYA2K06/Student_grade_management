@@ -1,0 +1,4 @@
+firstName,lastName,username,password,email,birthDate,programOfStudy,graduationYear,department
+Wesley,Xu,wxu,123456,wesley.xu.23@ucl.ac.uk,2005-06-22,MEng Computer Science,2027,Computer Science
+Jack,Pan,jpan,123456,zcabpan@ucl.ac.uk,2005-09-10,MEng Computer Science,2027,Computer Science
+Aiden,Li,ali,123456,yiliu.li.23@ucl.ac.uk,2006-03-17,Bsc Computer Science,2026,Computer Science
