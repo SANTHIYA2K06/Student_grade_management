@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Student Management System - Comp0010 Group24
+# Student Management System
 
 ## Project Overview
 
