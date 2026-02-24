@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Student Management System - Comp0010 Group24
 
 ## Project Overview
@@ -263,3 +264,6 @@ On the login page, use the following credentials to log on to the administration
 ### 7. Logout
 
 - Users can logout by clicking the "Logout" button in the the hover menu of the top right corner.
+=======
+# Student_grade_management
+>>>>>>> 01ca3cef0d25ab733434923f65ef620252e2733a
